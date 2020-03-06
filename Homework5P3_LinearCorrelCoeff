@@ -1,1 +1,80 @@
+# Author Noraim Nunez; Edited 2March2020
+#Solving for the linear correlation coefficient
 
+# Defining variables 
+count = 0
+sumx = 0
+sumy = 0
+sumz = 0
+result = []
+
+# Importing the text file that outputs two colomns, x and y  
+path =r'/home/djbrown/Downloads/random_x_y_pairs.txt'
+x_y = open(path, 'r')
+lines = x_y.readlines()
+
+# Applying for loop to split the x-value colomn into a seperate array 
+for x in lines:
+  result.append(x.split()[0])
+  Xarray = x.split()[0]
+
+# Summing all values from array in the x colomn, Xarray 
+for i in Xarray():
+  if i.isdigit():
+    i = float(i)
+    count += count
+    sumx = sumx + i
+    
+# Calculating the average of the x-values
+Xavg = sumx/count
+
+# For loop to declare that y values are split into its own set
+  for y in lines:
+  result.append(y.split()[1])
+  Yarray = y.split()[1]
+
+# Summing all values from array in the y colomn, Yarray 
+for j in Yarray():
+  if j.isdigit():
+    j = float(j)
+    sumy = sumy + j
+    
+# Calculating the average of the y-values
+Yavg = sumy/count
+
+# Multiplying the x and y values and placing them in a seperate array
+Zarray = Xarray*Yarray
+
+# Getting the sum of the values in our new array, Zarray.
+for k in Zarray():
+  if k.isdigit():
+    k = float(k)
+    sumz = sumz + k
+
+Xsumsqr = 0
+
+# Calculating the standard deviation for the x-values
+for g in Xarray:
+    Xsqr = (Xarray[g]-Xavg)*(Xarray[g]-Xavg)
+    Xsumsqr = Xsumsqr + Xsqr
+
+Xinsqrt = Xsumsqr/count
+
+Xsqrt = Xinsqrt**0.5
+
+Ysumsqr = 0
+
+# Calculating the standard deviation for the y-values
+for h in Yarray:
+    Ysqr = (Yarray[h]-Yavg)*(Yarray[h]-Yavg)
+    Ysumsqr = Ysumsqr + Ysqr
+
+#Taking the square root
+Yinsqrt = Ysumsqr/count
+Ysqrt = Yinsqrt**0.5
+
+# Calculating the linear correlation coefficient
+coeff = (sumz-(Xavg*Yavg))/(Ysqrt*Xsqrt)
+
+# Printing outpit 
+print("Linear correlation coefficient : ", coeff)
