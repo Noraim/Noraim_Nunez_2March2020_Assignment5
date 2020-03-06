@@ -1,1 +1,29 @@
+# Author: Norai=im Nunez; Edited 2March2020
+# Ordering values in array from least to greatest
 
+# Defining the given array 
+array = [71, 51, 32, 62, 84, 109, 43, 92, 72, 41, 102, 80, 72, 69, 46, 94, 52, 95, 90, 72, 63, 70, 34, 80, 78, 34, 31, 37,
+   26, 41, 42, 107, 33, 108, 108, 75, 66, 23, 90, 53, 24, 70, 26, 41, 93, 24, 71, 39, 48, 66, 97, 107, 77, 71, 67, 39, 38,
+   107, 96, 92, 84, 46, 60, 95, 87, 90, 92, 63, 78, 78, 84, 107, 70, 108, 32, 36, 93, 108, 49, 72, 56, 43, 30, 56, 51, 97,
+   45, 92, 40, 43, 49, 83, 98, 28, 99, 97, 102, 89, 58, 87]
+
+# Redefining the given array to be a new array 
+newarray = []
+
+# Applying the While loop to identify the minimum value as the zeroeth value in array
+while array:
+  minimum = array[0]
+
+# For loop allows all values from the array to be accounted for in ordering the values 
+  for x in array:
+
+# The if loop finds and transfers the minimum value from the original array to the new array simultaneously 
+    if x < minimum:
+      minimum = x
+
+# The new array will have all the values ordered smallest to greates values 
+  newarray.append(minimum)
+  array.remove(minimum)
+
+# Printing the new array of ordered values
+print(newarray)
