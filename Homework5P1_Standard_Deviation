@@ -21,19 +21,21 @@ for i in range(int(num)):
 # Prints out the array 
 print ("ARRAY: ",num_array)
 
-# Gets the average of all the values.
+# Gets the average of all the values
 avg = (sum/(i+1))
 
-#This squares the difference between the values and the average and puts them in a sum.
+#Squares the difference between the values and the average 
 for j in range(i+1):
     sqr = (num_array[j]-int(avg))*(num_array[j]-int(avg))
+# Sums the values from the squares differences 
     sumsqr = sumsqr + sqr
 
-# Calculating what's inside the square root for standard deviation.
+# Calculates the value in the sqrt to solve for standard deviation
 insqrt = sumsqr/(i+1)
 
-# I tried making loops to find the square root but I was having too much trouble so I used the exponent 1/2.
+# Hard time with researching a loop equivilent to an exponent that will work correctly. Would appreciate a 
+# solution just to learn how to correctly apply the loop because it drove me nuts! 
 sqrt = insqrt**0.5
 
-# Prints out the standard deviation of values.
+# Prints out the standard deviation of values 
 print("Standard deviation of values : ", sqrt)
