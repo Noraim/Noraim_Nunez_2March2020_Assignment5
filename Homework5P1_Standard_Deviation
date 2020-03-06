@@ -1,0 +1,39 @@
+# Author: Noraim Nunez; Edited 2March2020
+# Calulcating the standard seviation of Array like a hipster 
+
+# Defining array and sums 
+num_array = list()
+sum = 0
+sumsqr = 0
+
+# Print an output for the user to input a desired value from the array 
+num = input("Enter how many elements you want:")
+print ("Enter numbers in array: ")
+
+# For loop to allow values into the array
+for i in range(int(num)):
+    n = input("num :")
+    num_array.append(int(n))
+    
+# Sums the total values that are allowed into the array 
+    sum = sum + int(n)
+
+# Prints out the array 
+print ("ARRAY: ",num_array)
+
+# Gets the average of all the values.
+avg = (sum/(i+1))
+
+#This squares the difference between the values and the average and puts them in a sum.
+for j in range(i+1):
+    sqr = (num_array[j]-int(avg))*(num_array[j]-int(avg))
+    sumsqr = sumsqr + sqr
+
+# Calculating what's inside the square root for standard deviation.
+insqrt = sumsqr/(i+1)
+
+# I tried making loops to find the square root but I was having too much trouble so I used the exponent 1/2.
+sqrt = insqrt**0.5
+
+# Prints out the standard deviation of values.
+print("Standard deviation of values : ", sqrt)
