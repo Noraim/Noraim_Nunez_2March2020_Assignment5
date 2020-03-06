@@ -1,1 +1,28 @@
+#Author: Noraim Nunez, edited 2March2020
+# Numerican integration for Reimann Sum 
 
+#Declaring variables 
+sumarea = 0
+a = 1
+b = 9
+
+#Printing Statement of Reimann sum formula 
+print("Using Riemann sum to approximate the integral of y = 3x^3 - 4x^2 + 3.2198x\n")
+
+# Printing output to ask the host for desired segment 
+N = input("How many segments would you like your Reimen Sum to be?  ")
+
+# Calculating the exponent of the general formula  
+N = int(N)
+delx = (b-a)/N
+delx = float(delx)
+print(delx)
+
+# For loop to allow range in the hosts' input value 
+for i in range(0, N-1):
+  i = float(i)
+  x = 1 + (i+0.5)*(delx)
+  area = ((3*x*x*x) - (4*x*x) + (3.2198*x))*(delx)
+  sumarea = sumarea + area
+
+print("Your approximate integral from 1 to 9 is : ",sumarea)
